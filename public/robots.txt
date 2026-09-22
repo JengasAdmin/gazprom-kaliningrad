@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /search
+
+# TODO: replace host with the production domain before deployment
+Sitemap: https://kaliningrad-gazprom.example/sitemap.xml

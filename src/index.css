@@ -1,0 +1,182 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-white font-sans text-graphite antialiased;
+    font-feature-settings: 'cv11', 'ss01';
+    font-variation-settings: 'opsz' 32;
+  }
+
+  ::selection {
+    @apply bg-gp-600 text-white;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-gp-600 ring-offset-2 ring-offset-white;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-page px-4 sm:px-6 lg:px-8;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-md px-5 py-2.5 text-sm font-semibold transition-colors duration-200;
+  }
+
+  .btn-primary {
+    @apply btn bg-gp-600 text-white hover:bg-gp-700;
+  }
+
+  .btn-outline {
+    @apply btn border border-gp-200 bg-white text-gp-800 hover:border-gp-600 hover:text-gp-600;
+  }
+
+  .btn-ghost-light {
+    @apply btn border border-white/40 text-white hover:bg-white/10;
+  }
+
+  .link-arrow {
+    @apply inline-flex items-center gap-1.5 text-sm font-semibold text-gp-700 transition-colors hover:text-gp-600;
+  }
+
+  .card {
+    @apply rounded-lg border border-slate-200 bg-white shadow-card transition-all duration-200;
+  }
+
+  .card-interactive {
+    @apply card hover:-translate-y-0.5 hover:shadow-cardHover;
+  }
+
+  .rich-text > * + * {
+    @apply mt-4;
+  }
+
+  .rich-text p {
+    @apply text-[15px] leading-relaxed text-slate-700;
+  }
+
+  .rich-text h2 {
+    @apply mt-8 text-xl font-bold text-graphite;
+  }
+
+  .rich-text ul {
+    @apply list-disc space-y-1.5 pl-5 text-[15px] leading-relaxed text-slate-700;
+  }
+}
+
+/* ---------- Leaflet adjustments ---------- */
+.leaflet-container {
+  font-family: inherit;
+  z-index: 0;
+}
+
+.gp-marker {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(7, 43, 71, 0.45);
+  color: #fff;
+}
+
+.gp-marker svg {
+  width: 14px;
+  height: 14px;
+}
+
+.gp-popup .leaflet-popup-content-wrapper {
+  border-radius: 8px;
+  padding: 0;
+}
+
+.gp-popup .leaflet-popup-content {
+  margin: 0;
+  width: 240px !important;
+}
+
+/* ---------- Version for visually impaired ---------- */
+html.vh-mode {
+  font-size: 20px;
+}
+
+html.vh-mode body {
+  @apply bg-white text-black;
+}
+
+html.vh-mode a {
+  @apply text-black underline;
+}
+
+html.vh-mode a:hover,
+html.vh-mode a:focus-visible {
+  @apply text-gp-800;
+}
+
+html.vh-mode img,
+html.vh-mode .hero-photo,
+html.vh-mode .photo {
+  filter: grayscale(1) contrast(1.02);
+}
+
+html.vh-mode .hero-gradient {
+  background: rgba(255, 255, 255, 0.88) !important;
+}
+
+html.vh-mode .hero-gradient * {
+  color: #000 !important;
+}
+
+html.vh-mode .text-white,
+html.vh-mode .text-slate-300,
+html.vh-mode .text-slate-400,
+html.vh-mode .text-slate-600,
+html.vh-mode .text-slate-700 {
+  color: #000 !important;
+}
+
+html.vh-mode .btn-primary {
+  @apply border-2 border-black bg-white text-black;
+}
+
+html.vh-mode .btn-outline,
+html.vh-mode .btn-ghost-light {
+  @apply border-2 border-black bg-white text-black;
+}
+
+html.vh-mode footer,
+html.vh-mode header,
+html.vh-mode [class*='bg-gp-'],
+html.vh-mode [class*='bg-navy'] {
+  background-color: #fff !important;
+}
+
+html.vh-mode [class*='text-white'] {
+  color: #000 !important;
+}
+
+html.vh-mode .card,
+html.vh-mode .card-interactive {
+  border: 2px solid #000 !important;
+  box-shadow: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

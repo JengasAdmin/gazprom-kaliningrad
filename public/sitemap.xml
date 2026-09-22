@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- TODO: replace host with the production domain before deployment -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://kaliningrad-gazprom.example/</loc><priority>1.0</priority></url>
+  <url><loc>https://kaliningrad-gazprom.example/news</loc><priority>0.9</priority></url>
+  <url><loc>https://kaliningrad-gazprom.example/map</loc><priority>0.9</priority></url>
+  <url><loc>https://kaliningrad-gazprom.example/management</loc><priority>0.7</priority></url>
+  <url><loc>https://kaliningrad-gazprom.example/employees</loc><priority>0.6</priority></url>
+  <url><loc>https://kaliningrad-gazprom.example/structure</loc><priority>0.7</priority></url>
+  <url><loc>https://kaliningrad-gazprom.example/facilities</loc><priority>0.8</priority></url>
+  <url><loc>https://kaliningrad-gazprom.example/gasification</loc><priority>0.8</priority></url>
+  <url><loc>https://kaliningrad-gazprom.example/projects</loc><priority>0.8</priority></url>
+  <url><loc>https://kaliningrad-gazprom.example/social</loc><priority>0.6</priority></url>
+  <url><loc>https://kaliningrad-gazprom.example/contacts</loc><priority>0.7</priority></url>
+</urlset>
