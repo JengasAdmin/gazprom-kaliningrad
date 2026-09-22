@@ -1,5 +1,5 @@
 import { NEWS } from './news';
-import { MANAGEMENT } from './management';
+import { MANAGEMENT, BOARD } from './management';
 import { EMPLOYEE_ROLES } from './employees';
 import { STRUCTURE } from './structure';
 import { FACILITIES, MAP_OBJECTS } from './facilities';
@@ -12,7 +12,7 @@ import { CONTACTS } from './contacts';
  * TODO: заменить статические массивы на запросы к API/CMS.
  */
 
-export { NEWS, MANAGEMENT, EMPLOYEE_ROLES, STRUCTURE, FACILITIES, MAP_OBJECTS, PROJECTS, CONTACTS };
+export { NEWS, MANAGEMENT, BOARD, EMPLOYEE_ROLES, STRUCTURE, FACILITIES, MAP_OBJECTS, PROJECTS, CONTACTS };
 
 export const NEWS_CATEGORIES = [
   'Все',
@@ -42,6 +42,10 @@ export function getRelatedNews(slug: string, limit = 3) {
 
 export function getManagement() {
   return MANAGEMENT;
+}
+
+export function getBoard() {
+  return BOARD;
 }
 
 export function getFacilities() {

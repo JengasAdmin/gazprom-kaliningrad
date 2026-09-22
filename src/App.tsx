@@ -15,6 +15,7 @@ import ProjectDetailPage from './pages/ProjectDetailPage';
 import SocialPage from './pages/SocialPage';
 import ContactsPage from './pages/ContactsPage';
 import SearchPage from './pages/SearchPage';
+import DemoAnnaPage from './pages/DemoAnnaPage';
 import NotFoundPage from './pages/NotFoundPage';
 
 export default function App() {
@@ -25,6 +26,7 @@ export default function App() {
         <Route path="/news" element={<NewsPage />} />
         <Route path="/news/:slug" element={<NewsDetailPage />} />
         <Route path="/management" element={<ManagementPage />} />
+        <Route path="/demo" element={<DemoAnnaPage />} />
         <Route path="/employees" element={<EmployeesPage />} />
         <Route path="/structure" element={<StructurePage />} />
         <Route path="/facilities" element={<FacilitiesPage />} />

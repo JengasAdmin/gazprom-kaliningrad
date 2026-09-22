@@ -13,6 +13,8 @@ export interface SEOInput {
   type?: 'website' | 'article';
   image?: string;
   jsonLd?: Record<string, unknown> | Record<string, unknown>[];
+  /** Запретить индексацию (для демо/служебных страниц) */
+  noindex?: boolean;
 }
 
 function upsertMeta(attr: 'name' | 'property', key: string, content: string) {
@@ -25,11 +27,16 @@ function upsertMeta(attr: 'name' | 'property', key: string, content: string) {
   el.setAttribute('content', content);
 }
 
-export function useSEO({ title, description, path = '/', type = 'website', image, jsonLd }: SEOInput) {
+export function useSEO({ title, description, path = '/', type = 'website', image, jsonLd, noindex }: SEOInput) {
   useEffect(() => {
     const canonicalUrl = `${SITE_URL}${path}`;
     document.title = title;
     upsertMeta('name', 'description', description);
+    if (noindex) {
+      upsertMeta('name', 'robots', 'noindex, nofollow');
+    } else {
+      document.head.querySelector<HTMLMetaElement>('meta[name="robots"]')?.remove();
+    }
     upsertMeta('property', 'og:title', title);
     upsertMeta('property', 'og:description', description);
     upsertMeta('property', 'og:type', type);
