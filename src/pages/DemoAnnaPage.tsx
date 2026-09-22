@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { useSEO } from '../lib/seo';
 import { Breadcrumbs } from '../components/ui/Breadcrumbs';
 import { FlameIcon, WarningIcon, ArrowRightIcon } from '../components/ui/icons';
+import annaAvatar from '../assets/anna-s.png';
 
 /**
  * ДЕМО-страница для теста макета карточки руководителя.
@@ -60,12 +61,11 @@ export default function DemoAnnaPage() {
             aria-hidden
           />
           <div className="relative z-10 flex flex-wrap items-start gap-8 p-8 sm:p-12">
-            <div
-              aria-hidden
-              className="grid h-28 w-28 shrink-0 place-items-center rounded-2xl border-2 border-white/25 bg-white/10 text-4xl font-extrabold tracking-wide"
-            >
-              АС
-            </div>
+            <img
+              src={annaAvatar}
+              alt="Аватар вымышленного персонажа — цветок георгины"
+              className="h-28 w-28 shrink-0 rounded-2xl border-2 border-white/25 object-cover shadow-lg"
+            />
             <div className="min-w-0 flex-1">
               <p className="mb-2 inline-flex items-center gap-2 rounded-full border border-white/25 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-gp-200">
                 <FlameIcon className="h-4 w-4" aria-hidden />
